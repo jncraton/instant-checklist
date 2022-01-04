@@ -33,8 +33,8 @@
 
     function load() {
       document.querySelector('ul').innerHTML = '<li>' + location.hash.substring(1).split(';').reduce((p,c) => {
-        c = c.replace(/[a-z][A-Z]/g, r => `${r[0]} ${r[1].toLowerCase()}`)
-        c = c.replace(/[a-z][A-Z]/g, r => `${r[0]} ${r[1].toLowerCase()}`)
+        c = c.replace(/[a-z][A-Z\(]/g, r => `${r[0]} ${r[1].toLowerCase()}`)
+        c = c.replace(/[a-z][A-Z\(]/g, r => `${r[0]} ${r[1].toLowerCase()}`)
         return p + (c ? `${c}<li>` : '')
       },'')
       update()
@@ -52,7 +52,7 @@
       let content = list.innerHTML
       content = content.replace(/\<\/li\>/ig, ';')
       content = content.replace(/\<.*?\>/g, '')
-      content = content.replace(/ [a-z]/ig, c => c[1].toUpperCase())
+      content = content.replace(/ [a-z\(]/ig, c => c[1].toUpperCase())
       location.hash = content
 
       // Replace checkboxes
