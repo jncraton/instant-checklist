@@ -20,9 +20,12 @@
     }
 
     function load() {
-      location.hash.substring(1).split(';').forEach(item => {
-        console.log(item)
-      })
+      document.querySelector('ul').innerHTML = '<li>' + location.hash.substring(1).split(';').reduce((p,c) => {
+        c = c.replace(/[a-z][A-Z]/g, r => `${r[0]} ${r[1].toLowerCase()}`)
+        c = c.replace(/[a-z][A-Z]/g, r => `${r[0]} ${r[1].toLowerCase()}`)
+        return p + (c ? `${c}<li>` : '')
+      },'')
+      update()
     }
 
     function update(e) {
