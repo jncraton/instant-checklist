@@ -30,7 +30,7 @@
 
     function update(e) {
       // Skip update on checking box
-      if (e.target.tagName.toLowerCase() == 'input') return true
+      if (e?.target.tagName.toLowerCase() == 'input') return true
 
       // Remove all checkboxes
       document.querySelectorAll('span').forEach(el => el.parentNode.removeChild(el))
