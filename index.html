@@ -32,10 +32,10 @@
     }
 
     function load() {
-      document.querySelector('ul').innerHTML = '<li>' + location.hash.substring(1).split(';').reduce((p,c) => {
+      document.querySelector('ul').innerHTML = location.hash.substring(1).split(';').reduce((p,c) => {
         c = c.replace(/[a-z][A-Z\(]/g, r => `${r[0]} ${r[1].toLowerCase()}`)
         c = c.replace(/[a-z][A-Z\(]/g, r => `${r[0]} ${r[1].toLowerCase()}`)
-        return p + (c ? `${c}<li>` : '')
+        return p + (c ? `<li>${c}` : '')
       },'')
       update()
     }
