@@ -50,7 +50,7 @@
       // Serialize
       const list = document.querySelector('ul')
       let content = list.innerHTML
-      content = content.replace(/\<\/li\>/ig, ';')
+      content = content.replace(/\<\/li\>\<li\>/ig, ';')
       content = content.replace(/\<.*?\>/g, '')
       content = content.replace(/ [a-z\(]/ig, c => c[1].toUpperCase())
       location.hash = content
