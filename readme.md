@@ -1,5 +1,4 @@
-Instant Checklist
-=================
+# Instant Checklist
 
 ![Lint](https://github.com/jncraton/instant-checklist/actions/workflows/lint.yml/badge.svg)
 ![Deploy](https://github.com/jncraton/instant-checklist/actions/workflows/deploy.yml/badge.svg)
